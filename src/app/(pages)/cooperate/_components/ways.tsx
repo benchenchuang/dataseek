@@ -2,7 +2,7 @@
  * @Author: Jimmy
  * @LastModifiedBy: Jimmy
  * @Date: 2024-02-11 11:38:01
- * @LastEditTime: 2024-02-11 12:49:53
+ * @LastEditTime: 2024-02-11 13:23:03
  * @FilePath: /dataseek-website/src/app/(pages)/cooperate/_components/ways.tsx
  */
 import BlockHeader from '@/components/BlockHeader'
@@ -76,7 +76,7 @@ const CooperateWays = () => {
                                     }
                                 </div>
                             </div>
-                            <Image src={mode.image} alt={siteConfig.name} />
+                            <Image className='wow flipInY' src={mode.image} alt={siteConfig.name} />
                         </div>
                     })
                 }
