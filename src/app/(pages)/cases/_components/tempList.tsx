@@ -2,7 +2,7 @@
  * @Author: Jimmy
  * @LastModifiedBy: Jimmy
  * @Date: 2024-02-11 17:08:07
- * @LastEditTime: 2024-02-11 17:28:47
+ * @LastEditTime: 2024-02-11 21:23:17
  * @FilePath: /dataseek-website/src/app/(pages)/cases/_components/tempList.tsx
  */
 'use client';
@@ -45,7 +45,8 @@ const TempList = () => {
             {
                 tempList.map(temp=>{
                     return(
-                        <div
+                        <Link
+                            href={`/cases/${temp.id}`}
                             className='relative overflow-hidden rounded-[10px]'
                             key={temp.id}
                             onMouseEnter={()=>setActive(temp.id)} onMouseLeave={()=>setActive(-1)}
@@ -54,14 +55,14 @@ const TempList = () => {
                             <div className='relative z-10 mx-8 -mt-8 bg-white py-7 px-6'>
                                 <h3 className='text-[#333] font-[600] text-[20px]'>{temp.name}</h3>
                                 <div className={`flex flex-row mt-3`}>
-                                    <Link href={''} className={`text-site-primary ${active==temp.id?'mr-4':'mr-2'} text-[14px] transition-all`}>查看全部</Link>
+                                    <p className={`text-site-primary ${active==temp.id?'mr-4':'mr-2'} text-[14px] transition-all`}>查看全部</p>
                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6 text-site-primary
                                     ">
                                         <path strokeLinecap="round" strokeLinejoin="round" d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3" />
                                     </svg>
                                 </div>
                             </div>
-                        </div>
+                        </Link>
                     )
                 })
             }
