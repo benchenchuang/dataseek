@@ -2,7 +2,7 @@
  * @Author: Jimmy
  * @LastModifiedBy: Jimmy
  * @Date: 2024-01-12 12:41:59
- * @LastEditTime: 2024-02-13 11:56:34
+ * @LastEditTime: 2024-02-13 12:05:59
  * @FilePath: /dataseek-website/src/app/api/consult/route.ts
  */
 import { prisma } from "@/libs/db";
@@ -118,9 +118,8 @@ export const POST = async (req: NextRequest) => {
         },
             lark.withTenantToken(tenant_access_token)
         )
-        console.log(sendResult)
         // await prisma.consult.create({ data });
-        return NextResponse.json(responseData(200, '操作成功'))
+        return NextResponse.json(responseData(200, '提交成功，请耐心等待我们的联系'))
     } catch (err: any) {
         console.log(err)
         return NextResponse.json(responseData(0, '操作失败'))
