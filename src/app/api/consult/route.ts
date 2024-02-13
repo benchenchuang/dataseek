@@ -2,7 +2,7 @@
  * @Author: Jimmy
  * @LastModifiedBy: Jimmy
  * @Date: 2024-01-12 12:41:59
- * @LastEditTime: 2024-02-13 12:05:59
+ * @LastEditTime: 2024-02-13 12:45:49
  * @FilePath: /dataseek-website/src/app/api/consult/route.ts
  */
 import { prisma } from "@/libs/db";
@@ -112,7 +112,7 @@ export const POST = async (req: NextRequest) => {
             data: {
                 receive_id: receive_id,
                 msg_type: 'post',
-                content: `{\"zh_cn\":{\"title\":\"定制需求消息\",\"content\":[[{\"tag\":\"text\",\"text\":\"手机号:${phone}\"}],[{\"tag\":\"text\",\"text\":\"项目预算:${money}\"}],[{\"tag\":\"text\",\"text\":\"服务类型:${type}\"}],[{\"tag\":\"text\",\"text\":\"具体需求:${content}\"}]]}}`,
+                content: `{\"zh_cn\":{\"title\":\"定制需求信息\",\"content\":[[{\"tag\":\"text\",\"text\":\"手机号:${phone}\"}],[{\"tag\":\"text\",\"text\":\"项目预算:${money}\"}],[{\"tag\":\"text\",\"text\":\"服务类型:${type}\"}],[{\"tag\":\"text\",\"text\":\"具体需求:${content}\"}]]}}`,
                 uuid,
             },
         },
