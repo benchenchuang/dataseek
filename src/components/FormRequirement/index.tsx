@@ -2,7 +2,7 @@
  * @Author: Jimmy
  * @LastModifiedBy: Jimmy
  * @Date: 2024-02-08 10:58:38
- * @LastEditTime: 2024-02-10 11:00:44
+ * @LastEditTime: 2024-02-13 10:45:33
  * @FilePath: /dataseek-website/src/components/FormRequirement/index.tsx
  */
 'use client';
@@ -12,6 +12,7 @@ import { originalCharacter, randomNum } from '@/libs/code';
 import toast from 'react-hot-toast';
 import { Button, Input, Select, SelectItem, Textarea } from '@nextui-org/react';
 import { budgetList, serverList } from './dictionary';
+import { addInfo } from '@/api/consult';
 
 const FormRequirement = () => {
     //获取验证码
@@ -65,6 +66,12 @@ const FormRequirement = () => {
             leaveArea()
         }
     },[])
+
+    //提交
+    const submit = async ()=>{
+        let res = await addInfo({});
+        console.log(res)
+    }
 
     return (
         <div className='bg-[#f1f1f1] h-[120px]'>
@@ -164,7 +171,11 @@ const FormRequirement = () => {
                             className="text-black sm:w-full md:w-[120px] h-[54px] rounded-[8px]" />
                     </div>
                     <div>
-                        <Button color="primary" size='md' className='h-[54px] bg-block-primary'>我要定制需求</Button>
+                        <Button 
+                            color="primary" size='md' 
+                            className='h-[54px] bg-block-primary'
+                            onClick={submit}
+                            >我要定制需求</Button>
                     </div>
                 </div>
             </div>

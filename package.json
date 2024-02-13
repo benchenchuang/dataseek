@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@larksuiteoapi/node-sdk": "^1.23.0",
     "@nextui-org/react": "^2.2.9",
     "@prisma/client": "^5.8.0",
     "@types/bcryptjs": "^2.4.6",
